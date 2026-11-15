@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="480" style="background:#ffffff; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <rect width="800" height="480" fill="#ffffff" rx="8"/>
+  <text x="400" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">臺北市 12 行政區清潔隊年均資源回收清運量排行</text>
+  <text x="400" y="52" text-anchor="middle" font-size="12" fill="#64748b">各區隊平均年度清運量 (公噸) 與全市佔比分析 (111-114年平均)</text>
+
+  <!-- Y labels and bars -->
+  <!-- Max is 7,500 tons -> 520 px width -->
+  <!-- Districts sorted -->
+  <text x="100" y="95" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">大安區隊</text>
+  <rect x="110" y="80" width="448" height="22" fill="#1d4ed8" rx="3"/>
+  <text x="563" y="96" font-size="12" font-weight="bold" fill="#1e293b">7468.6 噸 (13.9%)</text>
+  <text x="100" y="123" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">中山區隊</text>
+  <rect x="110" y="108" width="390" height="22" fill="#2563eb" rx="3"/>
+  <text x="505" y="124" font-size="12" font-weight="bold" fill="#1e293b">6501.1 噸 (12.1%)</text>
+  <text x="100" y="151" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">文山區隊</text>
+  <rect x="110" y="136" width="362" height="22" fill="#3b82f6" rx="3"/>
+  <text x="477" y="152" font-size="12" font-weight="bold" fill="#1e293b">6040.2 噸 (11.2%)</text>
+  <text x="100" y="179" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">內湖區隊</text>
+  <rect x="110" y="164" width="348" height="22" fill="#60a5fa" rx="3"/>
+  <text x="463" y="180" font-size="12" font-weight="bold" fill="#1e293b">5813.2 噸 (10.8%)</text>
+  <text x="100" y="207" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">士林區隊</text>
+  <rect x="110" y="192" width="317" height="22" fill="#93c5fd" rx="3"/>
+  <text x="432" y="208" font-size="12" font-weight="bold" fill="#1e293b">5283.5 噸 (9.8%)</text>
+  <text x="100" y="235" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">信義區隊</text>
+  <rect x="110" y="220" width="274" height="22" fill="#0d9488" rx="3"/>
+  <text x="389" y="236" font-size="12" font-weight="bold" fill="#1e293b">4574.6 噸 (8.5%)</text>
+  <text x="100" y="263" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">松山區隊</text>
+  <rect x="110" y="248" width="263" height="22" fill="#14b8a6" rx="3"/>
+  <text x="378" y="264" font-size="12" font-weight="bold" fill="#1e293b">4393.1 噸 (8.2%)</text>
+  <text x="100" y="291" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">北投區隊</text>
+  <rect x="110" y="276" width="225" height="22" fill="#2dd4bf" rx="3"/>
+  <text x="340" y="292" font-size="12" font-weight="bold" fill="#1e293b">3762.0 噸 (7.0%)</text>
+  <text x="100" y="319" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">萬華區隊</text>
+  <rect x="110" y="304" width="189" height="22" fill="#f59e0b" rx="3"/>
+  <text x="304" y="320" font-size="12" font-weight="bold" fill="#1e293b">3159.7 噸 (5.9%)</text>
+  <text x="100" y="347" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">中正區隊</text>
+  <rect x="110" y="332" width="181" height="22" fill="#fbbf24" rx="3"/>
+  <text x="296" y="348" font-size="12" font-weight="bold" fill="#1e293b">3017.7 噸 (5.6%)</text>
+  <text x="100" y="375" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">南港區隊</text>
+  <rect x="110" y="360" width="131" height="22" fill="#a855f7" rx="3"/>
+  <text x="246" y="376" font-size="12" font-weight="bold" fill="#1e293b">2198.5 噸 (4.1%)</text>
+  <text x="100" y="403" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">大同區隊</text>
+  <rect x="110" y="388" width="93" height="22" fill="#c084fc" rx="3"/>
+  <text x="208" y="404" font-size="12" font-weight="bold" fill="#1e293b">1558.7 噸 (2.9%)</text>
+
+  <!-- Tier indicator on the right -->
+  <rect x="630" y="80" width="145" height="135" fill="#eff6ff" stroke="#93c5fd" rx="6"/>
+  <text x="640" y="102" font-size="12" font-weight="bold" fill="#1e40af">第一梯隊 (前五強)</text>
+  <text x="640" y="122" font-size="11" fill="#3b82f6">合計佔全市 57.9%</text>
+  <text x="640" y="142" font-size="11" fill="#64748b">人口密集、商圈龐大</text>
+  <text x="640" y="162" font-size="11" fill="#64748b">士林/內湖面積廣大</text>
+  <text x="640" y="182" font-size="11" fill="#64748b">排班與出勤最繁重</text>
+
+  <rect x="630" y="225" width="145" height="105" fill="#f0fdfa" stroke="#99f6e4" rx="6"/>
+  <text x="640" y="247" font-size="12" font-weight="bold" fill="#0f766e">第二梯隊 (中型)</text>
+  <text x="640" y="267" font-size="11" fill="#14b8a6">合計佔全市 35.2%</text>
+  <text x="640" y="287" font-size="11" fill="#64748b">信義、松山、北投</text>
+  <text x="640" y="307" font-size="11" fill="#64748b">萬華、中正老城區</text>
+
+  <rect x="630" y="340" width="145" height="75" fill="#faf5ff" stroke="#e9d5ff" rx="6"/>
+  <text x="640" y="362" font-size="12" font-weight="bold" fill="#6b21a8">第三梯隊 (精簡)</text>
+  <text x="640" y="382" font-size="11" fill="#a855f7">合計佔全市 7.0%</text>
+  <text x="640" y="402" font-size="11" fill="#64748b">南港、大同區隊</text>
+
+  <text x="400" y="440" text-anchor="middle" font-size="11" fill="#64748b">
+    註：前 5 個區隊（大安、中山、文山、內湖、士林）的資源回收量即佔全市近六成，為資源回收車隊出勤最頻繁之熱區。
+  </text>
+</svg>

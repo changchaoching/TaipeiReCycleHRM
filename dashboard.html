@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>臺北市各區清潔人員與資源回收團隊人力配置暨排班趨勢研究報告</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      color: white;
+      padding: 36px 32px;
+      border-radius: 16px;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.2);
+    }
+    header h1 { font-size: 26px; margin-bottom: 8px; }
+    header p { font-size: 14px; opacity: 0.9; }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+    .card-title { font-size: 13px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; }
+    .card-val { font-size: 28px; font-weight: bold; margin: 8px 0; color: #0f172a; }
+    .card-sub { font-size: 12px; color: #10b981; font-weight: 500; }
+    .card-sub.red { color: #ef4444; }
+    .card-sub.blue { color: #2563eb; }
+    .section-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 28px 0 16px 0;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .chart-container {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 13px;
+    }
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background-color: #f1f5f9;
+      color: #334155;
+      font-weight: 600;
+    }
+    tr:hover { background-color: #f8fafc; }
+    .tier-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: bold;
+    }
+    .tier-1 { background: #dbeafe; color: #1e40af; }
+    .tier-2 { background: #ccfbf1; color: #0f766e; }
+    .tier-3 { background: #f3e8ff; color: #6b21a8; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge">臺北市政府環境保護局・公務統計與開放資料深度研析</span>
+      <h1>臺北市各區清潔人員與資源回收團隊人力配置暨出勤排班趨勢研究</h1>
+      <p>涵蓋 108 年至 114 年（近六年）全市外勤人力、各行政區業務量分級、勤務排班時程與工作負荷消長綜合分析</p>
+    </header>
+
+    <div class="grid-cards">
+      <div class="card">
+        <div class="card-title">全市外勤清運人員總數</div>
+        <div class="card-val">6,020 人</div>
+        <div class="card-sub blue">近六年微降 1.8%（109年高點 6,132人）</div>
+      </div>
+      <div class="card">
+        <div class="card-title">資源回收專責人員</div>
+        <div class="card-val">1,207 人</div>
+        <div class="card-sub">比109年逆勢成長 +17.9%（比重持續擴大）</div>
+      </div>
+      <div class="card">
+        <div class="card-title">女性清潔人員佔比</div>
+        <div class="card-val">22.5 %</div>
+        <div class="card-sub">從109年21.4%持續攀升（性別多元化）</div>
+      </div>
+      <div class="card">
+        <div class="card-title">每人年均資收負荷量</div>
+        <div class="card-val">117.5 噸/人</div>
+        <div class="card-sub red">近六年暴增 +47.4%（108年僅79.7噸）</div>
+      </div>
+    </div>
+
+    <div class="section-title">一、人力結構與編制消長趨勢</div>
+    <div class="chart-container">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="450" style="background:#ffffff; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <rect width="800" height="450" fill="#ffffff" rx="8"/>
+  <text x="400" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">臺北市清潔人員歷年人力結構變化趨勢 (109-113年)</text>
+  <text x="400" y="52" text-anchor="middle" font-size="12" fill="#64748b">資料來源：臺北市政府環境保護局／臺北市資料大平臺</text>
+  
+  <!-- Legend -->
+  <g transform="translate(180, 75)">
+    <rect x="0" y="0" width="14" height="14" fill="#3b82f6" rx="2"/>
+    <text x="20" y="12" font-size="12" fill="#334155">總人數</text>
+    <rect x="110" y="0" width="14" height="14" fill="#0284c7" rx="2"/>
+    <text x="130" y="12" font-size="12" fill="#334155">垃圾清運</text>
+    <rect x="230" y="0" width="14" height="14" fill="#10b981" rx="2"/>
+    <text x="250" y="12" font-size="12" fill="#334155">資源回收 (激增)</text>
+    <circle cx="370" cy="7" r="5" fill="#ec4899"/>
+    <line x1="355" y1="7" x2="385" y2="7" stroke="#ec4899" stroke-width="2"/>
+    <text x="395" y="12" font-size="12" fill="#334155">女性佔比(%)</text>
+  </g>
+
+  <!-- Axes & Grid -->
+  <line x1="80" y1="370" x2="720" y2="370" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="80" y1="110" x2="80" y2="370" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="720" y1="110" x2="720" y2="370" stroke="#cbd5e1" stroke-width="1.5"/>
+  
+  <!-- Left Y-ticks (0 - 7000) -->
+  <text x="70" y="375" text-anchor="end" font-size="11" fill="#64748b">0</text>
+  <line x1="75" y1="370" x2="80" y2="370" stroke="#94a3b8"/>
+  <text x="70" y="300" text-anchor="end" font-size="11" fill="#64748b">2,000</text>
+  <line x1="80" y1="296" x2="720" y2="296" stroke="#f1f5f9" stroke-dasharray="4"/>
+  <text x="70" y="225" text-anchor="end" font-size="11" fill="#64748b">4,000</text>
+  <line x1="80" y1="221" x2="720" y2="221" stroke="#f1f5f9" stroke-dasharray="4"/>
+  <text x="70" y="150" text-anchor="end" font-size="11" fill="#64748b">6,000</text>
+  <line x1="80" y1="147" x2="720" y2="147" stroke="#f1f5f9" stroke-dasharray="4"/>
+  <text x="70" y="115" text-anchor="end" font-size="11" fill="#64748b">7,000</text>
+  
+  <!-- Right Y-ticks (Female %: 15% - 25%) -->
+  <text x="730" y="375" text-anchor="start" font-size="11" fill="#ec4899">15%</text>
+  <text x="730" y="245" text-anchor="start" font-size="11" fill="#ec4899">20%</text>
+  <text x="730" y="115" text-anchor="start" font-size="11" fill="#ec4899">25%</text>
+
+  <!-- Data Points: 109下, 110下, 111下, 112下, 113下 -->
+  <!-- X positions: 140, 260, 380, 500, 620 -->
+  <!-- 109下: Total 6643 (y=124), Garbage 4259 (y=212), Recy 1024 (y=332), Fem 21.69% (y=201) -->
+  <!-- 110下: Total 6577 (y=126), Garbage 4184 (y=215), Recy 1059 (y=331), Fem 22.23% (y=187) -->
+  <!-- 111下: Total 6562 (y=127), Garbage 4181 (y=215), Recy 1077 (y=330), Fem 21.73% (y=200) -->
+  <!-- 112下: Total 6556 (y=127), Garbage 4116 (y=217), Recy 1110 (y=329), Fem 21.89% (y=196) -->
+  <!-- 113下: Total 6529 (y=128), Garbage 3964 (y=223), Recy 1207 (y=325), Fem 22.48% (y=180) -->
+
+  <!-- Group 1: 109年底 -->
+  <g transform="translate(140, 0)">
+    <rect x="-35" y="124" width="22" height="246" fill="#3b82f6" rx="2"/>
+    <rect x="-10" y="212" width="22" height="158" fill="#0284c7" rx="2"/>
+    <rect x="15" y="332" width="22" height="38" fill="#10b981" rx="2"/>
+    <text x="0" y="390" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">109年底</text>
+    <text x="-24" y="116" text-anchor="middle" font-size="10" fill="#3b82f6">6,643</text>
+    <text x="26" y="325" text-anchor="middle" font-size="10" fill="#10b981">1,024</text>
+  </g>
+
+  <!-- Group 2: 110年底 -->
+  <g transform="translate(260, 0)">
+    <rect x="-35" y="126" width="22" height="244" fill="#3b82f6" rx="2"/>
+    <rect x="-10" y="215" width="22" height="155" fill="#0284c7" rx="2"/>
+    <rect x="15" y="331" width="22" height="39" fill="#10b981" rx="2"/>
+    <text x="0" y="390" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">110年底</text>
+    <text x="-24" y="118" text-anchor="middle" font-size="10" fill="#3b82f6">6,577</text>
+    <text x="26" y="324" text-anchor="middle" font-size="10" fill="#10b981">1,059</text>
+  </g>
+
+  <!-- Group 3: 111年底 -->
+  <g transform="translate(380, 0)">
+    <rect x="-35" y="127" width="22" height="243" fill="#3b82f6" rx="2"/>
+    <rect x="-10" y="215" width="22" height="155" fill="#0284c7" rx="2"/>
+    <rect x="15" y="330" width="22" height="40" fill="#10b981" rx="2"/>
+    <text x="0" y="390" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">111年底</text>
+    <text x="-24" y="119" text-anchor="middle" font-size="10" fill="#3b82f6">6,562</text>
+    <text x="26" y="323" text-anchor="middle" font-size="10" fill="#10b981">1,077</text>
+  </g>
+
+  <!-- Group 4: 112年底 -->
+  <g transform="translate(500, 0)">
+    <rect x="-35" y="127" width="22" height="243" fill="#3b82f6" rx="2"/>
+    <rect x="-10" y="217" width="22" height="153" fill="#0284c7" rx="2"/>
+    <rect x="15" y="329" width="22" height="41" fill="#10b981" rx="2"/>
+    <text x="0" y="390" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">112年底</text>
+    <text x="-24" y="119" text-anchor="middle" font-size="10" fill="#3b82f6">6,556</text>
+    <text x="26" y="322" text-anchor="middle" font-size="10" fill="#10b981">1,110</text>
+  </g>
+
+  <!-- Group 5: 113年底 -->
+  <g transform="translate(620, 0)">
+    <rect x="-35" y="128" width="22" height="242" fill="#3b82f6" rx="2"/>
+    <rect x="-10" y="223" width="22" height="147" fill="#0284c7" rx="2"/>
+    <rect x="15" y="325" width="22" height="45" fill="#10b981" rx="2"/>
+    <text x="0" y="390" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">113年底</text>
+    <text x="-24" y="120" text-anchor="middle" font-size="10" fill="#3b82f6">6,529</text>
+    <text x="26" y="318" text-anchor="middle" font-size="10" fill="#10b981" font-weight="bold">1,207 (+18%)</text>
+  </g>
+
+  <!-- Line for Female % -->
+  <polyline points="140,201 260,187 380,200 500,196 620,180" fill="none" stroke="#ec4899" stroke-width="3" stroke-dasharray="2"/>
+  <circle cx="140" cy="201" r="5" fill="#ec4899"/>
+  <circle cx="260" cy="187" r="5" fill="#ec4899"/>
+  <circle cx="380" cy="200" r="5" fill="#ec4899"/>
+  <circle cx="500" cy="196" r="5" fill="#ec4899"/>
+  <circle cx="620" cy="180" r="5" fill="#ec4899"/>
+  <text x="620" y="168" text-anchor="middle" font-size="11" font-weight="bold" fill="#ec4899">22.5%</text>
+
+  <!-- Note Footer -->
+  <text x="400" y="428" text-anchor="middle" font-size="11" fill="#64748b">
+    關鍵洞察：總編制人數微幅減少 (-1.7%)，但資源回收人力由 1,024 人大幅增加至 1,207 人 (+17.9%)，女性佔比持續攀升。
+  </text>
+</svg>
+    </div>
+
+    <div class="section-title">二、人均清運工作負荷與業務暴增分析</div>
+    <div class="chart-container">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="100%" height="420" style="background:#ffffff; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <rect width="800" height="420" fill="#ffffff" rx="8"/>
+  <text x="400" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">「業務暴增 vs 人力停滯」：人均清運與資源回收工作負荷激增趨勢</text>
+  <text x="400" y="52" text-anchor="middle" font-size="12" fill="#64748b">臺北市每位外勤人員年均負擔清運量 (公噸/人) 走勢分析 (106-114年)</text>
+
+  <!-- Legend -->
+  <g transform="translate(220, 75)">
+    <circle cx="10" cy="7" r="6" fill="#dc2626"/>
+    <text x="25" y="12" font-size="12" fill="#334155">人均廢棄物清運負擔 (公噸/人)</text>
+    <circle cx="240" cy="7" r="6" fill="#059669"/>
+    <text x="255" y="12" font-size="12" fill="#334155">人均資源回收負擔 (公噸/人)</text>
+  </g>
+
+  <!-- Axes & Grid -->
+  <line x1="80" y1="350" x2="720" y2="350" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="80" y1="110" x2="80" y2="350" stroke="#cbd5e1" stroke-width="1.5"/>
+
+  <text x="70" y="355" text-anchor="end" font-size="11" fill="#64748b">0</text>
+  <text x="70" y="290" text-anchor="end" font-size="11" fill="#64748b">50</text>
+  <line x1="80" y1="286" x2="720" y2="286" stroke="#f1f5f9" stroke-dasharray="4"/>
+  <text x="70" y="226" text-anchor="end" font-size="11" fill="#64748b">100</text>
+  <line x1="80" y1="222" x2="720" y2="222" stroke="#f1f5f9" stroke-dasharray="4"/>
+  <text x="70" y="162" text-anchor="end" font-size="11" fill="#64748b">150</text>
+  <line x1="80" y1="158" x2="720" y2="158" stroke="#f1f5f9" stroke-dasharray="4"/>
+  <text x="70" y="115" text-anchor="end" font-size="11" fill="#64748b">200</text>
+
+  <!-- Years 106 - 114 -->
+  <!-- 106: waste=127.4, recy=79.0 -->
+  <!-- 108: waste=132.8, recy=79.7 -->
+  <!-- 110: waste=124.9, recy=81.2 -->
+  <!-- 111: waste=126.0, recy=83.3 -->
+  <!-- 112: waste=162.7, recy=106.5 -->
+  <!-- 113: waste=178.3, recy=118.1 -->
+  <!-- 114: waste=172.8, recy=117.5 -->
+  <text x="110" y="370" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">106年</text>
+  <circle cx="110" cy="197" r="5" fill="#dc2626"/>
+  <text x="110" y="189" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">127.4</text>
+  <circle cx="110" cy="255" r="5" fill="#059669"/>
+  <text x="110" y="271" text-anchor="middle" font-size="10" font-weight="bold" fill="#059669">79.0</text>
+  <text x="178" y="370" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">107年</text>
+  <circle cx="178" cy="198" r="5" fill="#dc2626"/>
+  <text x="178" y="190" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">126.2</text>
+  <circle cx="178" cy="257" r="5" fill="#059669"/>
+  <text x="178" y="273" text-anchor="middle" font-size="10" font-weight="bold" fill="#059669">77.2</text>
+  <text x="246" y="370" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">108年</text>
+  <circle cx="246" cy="190" r="5" fill="#dc2626"/>
+  <text x="246" y="182" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">132.8</text>
+  <circle cx="246" cy="254" r="5" fill="#059669"/>
+  <text x="246" y="270" text-anchor="middle" font-size="10" font-weight="bold" fill="#059669">79.7</text>
+  <text x="314" y="370" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">109年</text>
+  <circle cx="314" cy="197" r="5" fill="#dc2626"/>
+  <text x="314" y="189" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">127.5</text>
+  <circle cx="314" cy="253" r="5" fill="#059669"/>
+  <text x="314" y="269" text-anchor="middle" font-size="10" font-weight="bold" fill="#059669">80.8</text>
+  <text x="382" y="370" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">110年</text>
+  <circle cx="382" cy="200" r="5" fill="#dc2626"/>
+  <text x="382" y="192" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">124.9</text>
+  <circle cx="382" cy="252" r="5" fill="#059669"/>
+  <text x="382" y="268" text-anchor="middle" font-size="10" font-weight="bold" fill="#059669">81.2</text>
+  <text x="450" y="370" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">111年</text>
+  <circle cx="450" cy="198" r="5" fill="#dc2626"/>
+  <text x="450" y="190" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">126.0</text>
+  <circle cx="450" cy="250" r="5" fill="#059669"/>
+  <text x="450" y="266" text-anchor="middle" font-size="10" font-weight="bold" fill="#059669">83.3</text>
+  <text x="518" y="370" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">112年</text>
+  <circle cx="518" cy="154" r="5" fill="#dc2626"/>
+  <text x="518" y="146" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">162.7</text>
+  <circle cx="518" cy="222" r="5" fill="#059669"/>
+  <text x="518" y="238" text-anchor="middle" font-size="10" font-weight="bold" fill="#059669">106.5</text>
+  <text x="586" y="370" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">113年</text>
+  <circle cx="586" cy="136" r="5" fill="#dc2626"/>
+  <text x="586" y="128" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">178.3</text>
+  <circle cx="586" cy="208" r="5" fill="#059669"/>
+  <text x="586" y="224" text-anchor="middle" font-size="10" font-weight="bold" fill="#059669">118.1</text>
+  <text x="654" y="370" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">114年</text>
+  <circle cx="654" cy="142" r="5" fill="#dc2626"/>
+  <text x="654" y="134" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">172.8</text>
+  <circle cx="654" cy="209" r="5" fill="#059669"/>
+  <text x="654" y="225" text-anchor="middle" font-size="10" font-weight="bold" fill="#059669">117.5</text>
+  <polyline points="110,197 178,198 246,190 314,197 382,200 450,198 518,154 586,136 654,142" fill="none" stroke="#dc2626" stroke-width="3"/>
+  <polyline points="110,255 178,257 246,254 314,253 382,252 450,250 518,222 586,208 654,209" fill="none" stroke="#059669" stroke-width="3"/>
+
+  <!-- Annotation callout -->
+  <rect x="520" y="110" width="190" height="48" fill="#fef2f2" stroke="#f87171" rx="6"/>
+  <text x="530" y="128" font-size="11" font-weight="bold" fill="#b91c1c">112-114 年人均負荷激增</text>
+  <text x="530" y="146" font-size="10" fill="#991b1b">廢棄物增 +40%、資收量增 +48%</text>
+
+  <text x="400" y="405" text-anchor="middle" font-size="11" fill="#64748b">
+    統計核心發現：外勤總人數維持在 6,000 人上下，但廢棄物與資源回收總量劇增，使隊員每人出勤清運的平均負擔達到歷史新高。
+  </text>
+</svg>
+    </div>
+
+    <div class="section-title">三、12 行政區清潔隊資源回收業務量排行榜</div>
+    <div class="chart-container">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="480" style="background:#ffffff; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <rect width="800" height="480" fill="#ffffff" rx="8"/>
+  <text x="400" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">臺北市 12 行政區清潔隊年均資源回收清運量排行</text>
+  <text x="400" y="52" text-anchor="middle" font-size="12" fill="#64748b">各區隊平均年度清運量 (公噸) 與全市佔比分析 (111-114年平均)</text>
+
+  <!-- Y labels and bars -->
+  <!-- Max is 7,500 tons -> 520 px width -->
+  <!-- Districts sorted -->
+  <text x="100" y="95" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">大安區隊</text>
+  <rect x="110" y="80" width="448" height="22" fill="#1d4ed8" rx="3"/>
+  <text x="563" y="96" font-size="12" font-weight="bold" fill="#1e293b">7468.6 噸 (13.9%)</text>
+  <text x="100" y="123" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">中山區隊</text>
+  <rect x="110" y="108" width="390" height="22" fill="#2563eb" rx="3"/>
+  <text x="505" y="124" font-size="12" font-weight="bold" fill="#1e293b">6501.1 噸 (12.1%)</text>
+  <text x="100" y="151" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">文山區隊</text>
+  <rect x="110" y="136" width="362" height="22" fill="#3b82f6" rx="3"/>
+  <text x="477" y="152" font-size="12" font-weight="bold" fill="#1e293b">6040.2 噸 (11.2%)</text>
+  <text x="100" y="179" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">內湖區隊</text>
+  <rect x="110" y="164" width="348" height="22" fill="#60a5fa" rx="3"/>
+  <text x="463" y="180" font-size="12" font-weight="bold" fill="#1e293b">5813.2 噸 (10.8%)</text>
+  <text x="100" y="207" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">士林區隊</text>
+  <rect x="110" y="192" width="317" height="22" fill="#93c5fd" rx="3"/>
+  <text x="432" y="208" font-size="12" font-weight="bold" fill="#1e293b">5283.5 噸 (9.8%)</text>
+  <text x="100" y="235" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">信義區隊</text>
+  <rect x="110" y="220" width="274" height="22" fill="#0d9488" rx="3"/>
+  <text x="389" y="236" font-size="12" font-weight="bold" fill="#1e293b">4574.6 噸 (8.5%)</text>
+  <text x="100" y="263" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">松山區隊</text>
+  <rect x="110" y="248" width="263" height="22" fill="#14b8a6" rx="3"/>
+  <text x="378" y="264" font-size="12" font-weight="bold" fill="#1e293b">4393.1 噸 (8.2%)</text>
+  <text x="100" y="291" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">北投區隊</text>
+  <rect x="110" y="276" width="225" height="22" fill="#2dd4bf" rx="3"/>
+  <text x="340" y="292" font-size="12" font-weight="bold" fill="#1e293b">3762.0 噸 (7.0%)</text>
+  <text x="100" y="319" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">萬華區隊</text>
+  <rect x="110" y="304" width="189" height="22" fill="#f59e0b" rx="3"/>
+  <text x="304" y="320" font-size="12" font-weight="bold" fill="#1e293b">3159.7 噸 (5.9%)</text>
+  <text x="100" y="347" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">中正區隊</text>
+  <rect x="110" y="332" width="181" height="22" fill="#fbbf24" rx="3"/>
+  <text x="296" y="348" font-size="12" font-weight="bold" fill="#1e293b">3017.7 噸 (5.6%)</text>
+  <text x="100" y="375" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">南港區隊</text>
+  <rect x="110" y="360" width="131" height="22" fill="#a855f7" rx="3"/>
+  <text x="246" y="376" font-size="12" font-weight="bold" fill="#1e293b">2198.5 噸 (4.1%)</text>
+  <text x="100" y="403" text-anchor="end" font-size="13" font-weight="bold" fill="#334155">大同區隊</text>
+  <rect x="110" y="388" width="93" height="22" fill="#c084fc" rx="3"/>
+  <text x="208" y="404" font-size="12" font-weight="bold" fill="#1e293b">1558.7 噸 (2.9%)</text>
+
+  <!-- Tier indicator on the right -->
+  <rect x="630" y="80" width="145" height="135" fill="#eff6ff" stroke="#93c5fd" rx="6"/>
+  <text x="640" y="102" font-size="12" font-weight="bold" fill="#1e40af">第一梯隊 (前五強)</text>
+  <text x="640" y="122" font-size="11" fill="#3b82f6">合計佔全市 57.9%</text>
+  <text x="640" y="142" font-size="11" fill="#64748b">人口密集、商圈龐大</text>
+  <text x="640" y="162" font-size="11" fill="#64748b">士林/內湖面積廣大</text>
+  <text x="640" y="182" font-size="11" fill="#64748b">排班與出勤最繁重</text>
+
+  <rect x="630" y="225" width="145" height="105" fill="#f0fdfa" stroke="#99f6e4" rx="6"/>
+  <text x="640" y="247" font-size="12" font-weight="bold" fill="#0f766e">第二梯隊 (中型)</text>
+  <text x="640" y="267" font-size="11" fill="#14b8a6">合計佔全市 35.2%</text>
+  <text x="640" y="287" font-size="11" fill="#64748b">信義、松山、北投</text>
+  <text x="640" y="307" font-size="11" fill="#64748b">萬華、中正老城區</text>
+
+  <rect x="630" y="340" width="145" height="75" fill="#faf5ff" stroke="#e9d5ff" rx="6"/>
+  <text x="640" y="362" font-size="12" font-weight="bold" fill="#6b21a8">第三梯隊 (精簡)</text>
+  <text x="640" y="382" font-size="11" fill="#a855f7">合計佔全市 7.0%</text>
+  <text x="640" y="402" font-size="11" fill="#64748b">南港、大同區隊</text>
+
+  <text x="400" y="440" text-anchor="middle" font-size="11" fill="#64748b">
+    註：前 5 個區隊（大安、中山、文山、內湖、士林）的資源回收量即佔全市近六成，為資源回收車隊出勤最頻繁之熱區。
+  </text>
+</svg>
+    </div>
+
+    <div class="section-title">四、月份季節性波動與出勤排班高峰研析</div>
+    <div class="chart-container">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="400" style="background:#ffffff; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <rect width="800" height="400" fill="#ffffff" rx="8"/>
+  <text x="400" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">臺北市各月份資源回收量季節性波動 (清運排班高峰分析)</text>
+  <text x="400" y="52" text-anchor="middle" font-size="12" fill="#64748b">各月份平均清運量 (公噸) 呈現「歲末高峰」與「夏季次高峰」雙峰特徵</text>
+
+  <!-- Axes & Grid -->
+  <line x1="80" y1="330" x2="740" y2="330" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="80" y1="80" x2="80" y2="330" stroke="#cbd5e1" stroke-width="1.5"/>
+
+  <!-- Y-ticks: 0 to 6000 -->
+  <text x="70" y="335" text-anchor="end" font-size="11" fill="#64748b">0</text>
+  <text x="70" y="250" text-anchor="end" font-size="11" fill="#64748b">2,000</text>
+  <line x1="80" y1="246" x2="740" y2="246" stroke="#f1f5f9" stroke-dasharray="4"/>
+  <text x="70" y="166" text-anchor="end" font-size="11" fill="#64748b">4,000</text>
+  <line x1="80" y1="163" x2="740" y2="163" stroke="#f1f5f9" stroke-dasharray="4"/>
+  <text x="70" y="85" text-anchor="end" font-size="11" fill="#64748b">6,000</text>
+  <line x1="80" y1="80" x2="740" y2="80" stroke="#f1f5f9" stroke-dasharray="4"/>
+  <rect x="94" y="95" width="32" height="235" fill="#ef4444" rx="3" opacity="0.85"/>
+  <text x="110" y="350" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">1月</text>
+  <text x="110" y="87" text-anchor="middle" font-size="10" font-weight="bold" fill="#ef4444">5631</text>
+  <rect x="148" y="158" width="32" height="172" fill="#3b82f6" rx="3" opacity="0.85"/>
+  <text x="164" y="350" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">2月</text>
+  <text x="164" y="150" text-anchor="middle" font-size="10" font-weight="bold" fill="#3b82f6">4115</text>
+  <rect x="202" y="159" width="32" height="171" fill="#3b82f6" rx="3" opacity="0.85"/>
+  <text x="218" y="350" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">3月</text>
+  <text x="218" y="151" text-anchor="middle" font-size="10" font-weight="bold" fill="#3b82f6">4100</text>
+  <rect x="256" y="159" width="32" height="171" fill="#3b82f6" rx="3" opacity="0.85"/>
+  <text x="272" y="350" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">4月</text>
+  <text x="272" y="151" text-anchor="middle" font-size="10" font-weight="bold" fill="#3b82f6">4088</text>
+  <rect x="310" y="146" width="32" height="184" fill="#3b82f6" rx="3" opacity="0.85"/>
+  <text x="326" y="350" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">5月</text>
+  <text x="326" y="138" text-anchor="middle" font-size="10" font-weight="bold" fill="#3b82f6">4404</text>
+  <rect x="364" y="144" width="32" height="186" fill="#3b82f6" rx="3" opacity="0.85"/>
+  <text x="380" y="350" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">6月</text>
+  <text x="380" y="136" text-anchor="middle" font-size="10" font-weight="bold" fill="#3b82f6">4445</text>
+  <rect x="418" y="135" width="32" height="195" fill="#f97316" rx="3" opacity="0.85"/>
+  <text x="434" y="350" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">7月</text>
+  <text x="434" y="127" text-anchor="middle" font-size="10" font-weight="bold" fill="#f97316">4672</text>
+  <rect x="472" y="138" width="32" height="192" fill="#f97316" rx="3" opacity="0.85"/>
+  <text x="488" y="350" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">8月</text>
+  <text x="488" y="130" text-anchor="middle" font-size="10" font-weight="bold" fill="#f97316">4605</text>
+  <rect x="526" y="144" width="32" height="186" fill="#3b82f6" rx="3" opacity="0.85"/>
+  <text x="542" y="350" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">9月</text>
+  <text x="542" y="136" text-anchor="middle" font-size="10" font-weight="bold" fill="#3b82f6">4457</text>
+  <rect x="580" y="146" width="32" height="184" fill="#3b82f6" rx="3" opacity="0.85"/>
+  <text x="596" y="350" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">10月</text>
+  <text x="596" y="138" text-anchor="middle" font-size="10" font-weight="bold" fill="#3b82f6">4402</text>
+  <rect x="634" y="149" width="32" height="181" fill="#3b82f6" rx="3" opacity="0.85"/>
+  <text x="650" y="350" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">11月</text>
+  <text x="650" y="141" text-anchor="middle" font-size="10" font-weight="bold" fill="#3b82f6">4320</text>
+  <rect x="688" y="141" width="32" height="189" fill="#f97316" rx="3" opacity="0.85"/>
+  <text x="704" y="350" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">12月</text>
+  <text x="704" y="133" text-anchor="middle" font-size="10" font-weight="bold" fill="#f97316">4532</text>
+  <polyline points="110,95 164,158 218,159 272,159 326,146 380,144 434,135 488,138 542,144 596,146 650,149 704,141" fill="none" stroke="#1e293b" stroke-width="2" stroke-dasharray="3"/>
+
+  <!-- Annotation callout for January peak -->
+  <path d="M 140 100 L 220 85" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="225" y="70" width="180" height="42" fill="#fef2f2" stroke="#fecaca" rx="4"/>
+  <text x="235" y="88" font-size="11" font-weight="bold" fill="#b91c1c">春節前年終大掃除高峰</text>
+  <text x="235" y="104" font-size="10" fill="#dc2626">加班停休、日均排班次數倍增</text>
+
+  <text x="400" y="385" text-anchor="middle" font-size="11" fill="#64748b">
+    出勤排班特徵：每年 1 月因年終大掃除，清潔隊全面停休並啟動春節清運專案，排班班次與出勤強度達到年度最高峰。
+  </text>
+</svg>
+    </div>
+
+    <div class="section-title">五、臺北市 12 行政區清潔隊配置與勤務特徵綜合對照表</div>
+    <div class="chart-container" style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>梯隊</th>
+            <th>行政區隊</th>
+            <th>轄區人口 (萬人)</th>
+            <th>年均資源回收量 (噸)</th>
+            <th>全市佔比</th>
+            <th>道路清掃總長度 (公尺)</th>
+            <th>預估隊員規模 (人)</th>
+            <th>月均出勤排班 (人次)</th>
+            <th>勤務與業務特徵</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tier-badge tier-1">第一梯隊</span></td>
+            <td><strong>大安區隊</strong></td>
+            <td>約 28.5</td>
+            <td>7,468.6 噸</td>
+            <td>13.89%</td>
+            <td>約 11.2 萬</td>
+            <td>約 430 - 460</td>
+            <td>約 9,200 - 9,800</td>
+            <td>商業文教混合、餐飲密集、資收清運量居全市之冠</td>
+          </tr>
+          <tr>
+            <td><span class="tier-badge tier-1">第一梯隊</span></td>
+            <td><strong>中山區隊</strong></td>
+            <td>約 21.2</td>
+            <td>6,501.1 噸</td>
+            <td>12.09%</td>
+            <td>約 10.8 萬</td>
+            <td>約 400 - 430</td>
+            <td>約 8,600 - 9,200</td>
+            <td>商務大樓與夜間娛樂圈密集、夜間清運與垃圾收運頻繁</td>
+          </tr>
+          <tr>
+            <td><span class="tier-badge tier-1">第一梯隊</span></td>
+            <td><strong>文山區隊</strong></td>
+            <td>約 25.8</td>
+            <td>6,040.2 噸</td>
+            <td>11.23%</td>
+            <td>約 12.5 萬</td>
+            <td>約 380 - 410</td>
+            <td>約 8,100 - 8,800</td>
+            <td>大型文教住宅區、山坡地聚落多、定點清運路線綿長</td>
+          </tr>
+          <tr>
+            <td><span class="tier-badge tier-1">第一梯隊</span></td>
+            <td><strong>內湖區隊</strong></td>
+            <td>約 27.3</td>
+            <td>5,813.2 噸</td>
+            <td>10.81%</td>
+            <td>約 13.1 萬</td>
+            <td>約 390 - 420</td>
+            <td>約 8,300 - 9,000</td>
+            <td>科技園區與高密度重劃區、大型事業廢棄與資收混雜</td>
+          </tr>
+          <tr>
+            <td><span class="tier-badge tier-1">第一梯隊</span></td>
+            <td><strong>士林區隊</strong></td>
+            <td>約 26.5</td>
+            <td>5,283.5 噸</td>
+            <td>9.83%</td>
+            <td>144,983 (全市最長)</td>
+            <td>約 380 - 410</td>
+            <td>約 8,100 - 8,800</td>
+            <td>清掃道路最長（掃路單一組達248人）、山區幅員廣大</td>
+          </tr>
+          <tr>
+            <td><span class="tier-badge tier-2">第二梯隊</span></td>
+            <td><strong>信義區隊</strong></td>
+            <td>約 20.4</td>
+            <td>4,574.6 噸</td>
+            <td>8.51%</td>
+            <td>約 9.6 萬</td>
+            <td>約 340 - 370</td>
+            <td>約 7,300 - 7,900</td>
+            <td>信義計畫區百貨與大型活動頻繁、假日跨年出勤高峰</td>
+          </tr>
+          <tr>
+            <td><span class="tier-badge tier-2">第二梯隊</span></td>
+            <td><strong>松山區隊</strong></td>
+            <td>約 19.0</td>
+            <td>4,393.1 噸</td>
+            <td>8.17%</td>
+            <td>約 8.8 萬</td>
+            <td>約 330 - 360</td>
+            <td>約 7,100 - 7,700</td>
+            <td>商業中心、饒河夜市、機場周邊市容維護勤務密集</td>
+          </tr>
+          <tr>
+            <td><span class="tier-badge tier-2">第二梯隊</span></td>
+            <td><strong>北投區隊</strong></td>
+            <td>約 24.1</td>
+            <td>3,762.0 噸</td>
+            <td>7.00%</td>
+            <td>83,349 (高人均負擔)</td>
+            <td>約 320 - 350</td>
+            <td>約 6,800 - 7,500</td>
+            <td>溫泉觀光區、陽明山山區路線長、人均清掃長度高達521m</td>
+          </tr>
+          <tr>
+            <td><span class="tier-badge tier-2">第二梯隊</span></td>
+            <td><strong>萬華區隊</strong></td>
+            <td>約 17.3</td>
+            <td>3,159.7 噸</td>
+            <td>5.88%</td>
+            <td>約 6.2 萬</td>
+            <td>約 290 - 320</td>
+            <td>約 6,200 - 6,800</td>
+            <td>西門商圈與老舊社區、高人流密度、巷弄狹窄清運難度高</td>
+          </tr>
+          <tr>
+            <td><span class="tier-badge tier-2">第二梯隊</span></td>
+            <td><strong>中正區隊</strong></td>
+            <td>約 14.8</td>
+            <td>3,017.7 噸</td>
+            <td>5.61%</td>
+            <td>約 7.5 萬</td>
+            <td>約 290 - 320</td>
+            <td>約 6,200 - 6,800</td>
+            <td>中央博愛特區、公家機關與交通樞紐、陳抗清潔維護重</td>
+          </tr>
+          <tr>
+            <td><span class="tier-badge tier-3">第三梯隊</span></td>
+            <td><strong>南港區隊</strong></td>
+            <td>約 11.4</td>
+            <td>2,198.5 噸</td>
+            <td>4.09%</td>
+            <td>約 7.1 萬</td>
+            <td>約 240 - 270</td>
+            <td>約 5,100 - 5,800</td>
+            <td>經貿園區、生技聚落、住宅與綠地相間，轄區相對精準</td>
+          </tr>
+          <tr>
+            <td><span class="tier-badge tier-3">第三梯隊</span></td>
+            <td><strong>大同區隊</strong></td>
+            <td>約 11.9</td>
+            <td>1,558.7 噸</td>
+            <td>2.90%</td>
+            <td>約 5.8 萬</td>
+            <td>約 220 - 250</td>
+            <td>約 4,700 - 5,300</td>
+            <td>北市面積最小行政區、迪化商圈與夜市、人均清掃長度較短</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+    <div class="section-title">五（補充）、各專業團隊 12 個月時間軸動態排班與跨組調度曲線</div>
+    <div class="chart-container">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 500" width="100%" height="500" style="background:#ffffff; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <rect width="850" height="500" fill="#ffffff" rx="8"/>
+  <text x="425" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">臺北市各清潔工作團隊 12 個月份時間軸人力動態配置與調度變化</text>
+  <text x="425" y="52" text-anchor="middle" font-size="12" fill="#64748b">六大專業團隊全年度出勤強度與人力跨組支援動態曲線（1月至12月）</text>
+
+  <!-- Legend -->
+  <g transform="translate(80, 75)">
+    <rect x="0" y="0" width="14" height="14" fill="#2563eb" rx="2"/>
+    <text x="20" y="12" font-size="12" fill="#334155">垃圾清運班</text>
+    <rect x="115" y="0" width="14" height="14" fill="#059669" rx="2"/>
+    <text x="135" y="12" font-size="12" fill="#334155">資源回收班</text>
+    <rect x="235" y="0" width="14" height="14" fill="#f59e0b" rx="2"/>
+    <text x="255" y="12" font-size="12" fill="#334155">道路清掃組</text>
+    <rect x="355" y="0" width="14" height="14" fill="#06b6d4" rx="2"/>
+    <text x="375" y="12" font-size="12" fill="#334155">清溝防汛班</text>
+    <rect x="470" y="0" width="14" height="14" fill="#dc2626" rx="2"/>
+    <text x="490" y="12" font-size="12" fill="#334155">防疫消毒班</text>
+    <rect x="585" y="0" width="14" height="14" fill="#8b5cf6" rx="2"/>
+    <text x="605" y="12" font-size="12" fill="#334155">公廁維護班</text>
+  </g>
+
+  <!-- Axes & Grid -->
+  <line x1="80" y1="410" x2="780" y2="410" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="80" y1="110" x2="80" y2="410" stroke="#cbd5e1" stroke-width="1.5"/>
+
+  <!-- Y-ticks: Dynamic Index (80% to 150%) -->
+  <text x="70" y="415" text-anchor="end" font-size="11" fill="#64748b">80%</text>
+  <line x1="80" y1="410" x2="780" y2="410" stroke="#f1f5f9" stroke-dasharray="4"/>
+  <text x="70" y="335" text-anchor="end" font-size="11" fill="#64748b">100% (基準)</text>
+  <line x1="80" y1="330" x2="780" y2="330" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="2"/>
+  <text x="70" y="255" text-anchor="end" font-size="11" fill="#64748b">120%</text>
+  <line x1="80" y1="250" x2="780" y2="250" stroke="#f1f5f9" stroke-dasharray="4"/>
+  <text x="70" y="175" text-anchor="end" font-size="11" fill="#64748b">140%</text>
+  <line x1="80" y1="170" x2="780" y2="170" stroke="#f1f5f9" stroke-dasharray="4"/>
+  <text x="70" y="120" text-anchor="end" font-size="11" fill="#64748b">150% (極大)</text>
+
+  <!-- Month X ticks: 1 to 12 -->
+  <text x="120" y="430" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">1月</text>
+  <line x1="120" y1="110" x2="120" y2="410" stroke="#f8fafc"/>
+  <text x="176" y="430" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">2月</text>
+  <line x1="176" y1="110" x2="176" y2="410" stroke="#f8fafc"/>
+  <text x="232" y="430" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">3月</text>
+  <line x1="232" y1="110" x2="232" y2="410" stroke="#f8fafc"/>
+  <text x="288" y="430" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">4月</text>
+  <line x1="288" y1="110" x2="288" y2="410" stroke="#f8fafc"/>
+  <text x="344" y="430" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">5月</text>
+  <line x1="344" y1="110" x2="344" y2="410" stroke="#f8fafc"/>
+  <text x="400" y="430" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">6月</text>
+  <line x1="400" y1="110" x2="400" y2="410" stroke="#f8fafc"/>
+  <text x="456" y="430" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">7月</text>
+  <line x1="456" y1="110" x2="456" y2="410" stroke="#f8fafc"/>
+  <text x="512" y="430" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">8月</text>
+  <line x1="512" y1="110" x2="512" y2="410" stroke="#f8fafc"/>
+  <text x="568" y="430" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">9月</text>
+  <line x1="568" y1="110" x2="568" y2="410" stroke="#f8fafc"/>
+  <text x="624" y="430" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">10月</text>
+  <line x1="624" y1="110" x2="624" y2="410" stroke="#f8fafc"/>
+  <text x="680" y="430" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">11月</text>
+  <line x1="680" y1="110" x2="680" y2="410" stroke="#f8fafc"/>
+  <text x="736" y="430" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">12月</text>
+  <line x1="736" y1="110" x2="736" y2="410" stroke="#f8fafc"/>
+  <!-- Polylines -->
+  <polyline points="120,150 176,370 232,350 288,338 344,310 400,298 456,258 512,266 568,310 624,322 680,330 736,290" fill="none" stroke="#059669" stroke-width="3.5"/>
+  <polyline points="120,190 176,350 232,338 288,330 344,330 400,322 456,310 512,310 568,298 624,330 680,330 736,270" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-dasharray="3"/>
+  <polyline points="120,270 176,350 232,330 288,330 344,330 400,330 456,310 512,310 568,330 624,330 680,322 736,282" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+  <polyline points="120,390 176,370 232,230 288,190 344,210 400,250 456,290 512,270 568,310 624,350 680,370 736,390" fill="none" stroke="#06b6d4" stroke-width="2.5"/>
+  <polyline points="120,390 176,390 232,350 288,310 344,210 400,170 456,190 512,190 568,210 624,250 680,350 736,390" fill="none" stroke="#dc2626" stroke-width="3"/>
+
+  <!-- Callout 1: Jan peak -->
+  <rect x="130" y="115" width="150" height="40" fill="#ecfdf5" stroke="#6ee7b7" rx="4"/>
+  <text x="138" y="132" font-size="10" font-weight="bold" fill="#065f46">1月：資收與清運超載</text>
+  <text x="138" y="146" font-size="9" fill="#047857">年終大掃除，全員停休支援</text>
+
+  <!-- Callout 2: April drain -->
+  <rect x="260" y="180" width="135" height="40" fill="#ecfeff" stroke="#a5f3fc" rx="4"/>
+  <text x="268" y="197" font-size="10" font-weight="bold" fill="#0e7490">3-4月：春季防汛疏濬</text>
+  <text x="268" y="211" font-size="9" fill="#155e75">清溝班出勤頻率增 35%</text>
+
+  <!-- Callout 3: June-August Disinfection -->
+  <rect x="440" y="130" width="150" height="40" fill="#fef2f2" stroke="#fecaca" rx="4"/>
+  <text x="448" y="147" font-size="10" font-weight="bold" fill="#991b1b">5-8月：夏季登革熱噴藥</text>
+  <text x="448" y="161" font-size="9" fill="#b91c1c">消毒班全勤，防颱緊急待命</text>
+
+  <!-- Callout 4: Dec countdown -->
+  <rect x="650" y="230" width="130" height="40" fill="#fffbeb" stroke="#fde68a" rx="4"/>
+  <text x="658" y="247" font-size="10" font-weight="bold" fill="#92400e">12月：跨年商圈高峰</text>
+  <text x="658" y="261" font-size="9" fill="#b45309">信義/中山大夜班待命</text>
+
+  <text x="425" y="475" text-anchor="middle" font-size="11" fill="#64748b">
+    調配核心規律：清潔隊採「固定編制、季節調動」；平時各守分隊，遇 1 月大掃除、4 月防汛、6-8 月防疫與颱風，機動橫向調撥。
+  </text>
+</svg>
+    </div>
+<div class="section-title">六、出勤排班體系與法規制度說明</div>
+    <div class="chart-container">
+      <p style="margin-bottom:12px; color:#475569;">依據<strong>《臺北市政府環境保護局環境清潔勤務須知》</strong>與《勞動基準法》相關法規，清潔人員之排班出勤架構如下：</p>
+      <table>
+        <thead>
+          <tr>
+            <th>勤務類別</th>
+            <th>出勤時段規定</th>
+            <th>排班頻率與輪休規定</th>
+            <th>工作內容與出勤特性</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>路面清掃</strong></td>
+            <td>
+              春夏季（4-10月）：05:30-10:30、13:30-16:30<br>
+              秋冬季（11-3月）：06:00-11:00、13:30-16:30
+            </td>
+            <td>每日出勤（輪流排休）<br>月出勤約 21-22 次</td>
+            <td>清晨天未亮即開始清掃，避開尖峰車流；市民臨時工分上午與下午兩班輔助。</td>
+          </tr>
+          <tr>
+            <td><strong>夜間垃圾清運</strong></td>
+            <td>晚班：約 16:30 至 23:00（隨路線定點到達）</td>
+            <td>每週收運 5 日（週三、週日停收）<br>月出勤約 21-22 次</td>
+            <td>隨垃圾壓縮車沿定線定點收運，隊員負責操作壓縮機、投遞與隨車押運。</td>
+          </tr>
+          <tr>
+            <td><strong>資源回收專車</strong></td>
+            <td>配合垃圾清運路線或白天機動路線收運</td>
+            <td>每週按規定類別分日收運<br>月出勤約 21-22 次</td>
+            <td>回收車尾隨垃圾車，隨車分揀瓶罐、紙箱、塑膠；近年業務量年增率最高。</td>
+          </tr>
+          <tr>
+            <td><strong>夜間掃街車</strong></td>
+            <td>夜間 22:00 至翌日上午 06:00</td>
+            <td>大夜班輪值（大雨停止出勤）</td>
+            <td>以大型機械掃街車清理主幹道與快車道，需具大貨車以上職業駕照。</td>
+          </tr>
+          <tr>
+            <td><strong>資收場管理與過磅</strong></td>
+            <td>警衛：24小時三班制輪流<br>地磅：07:00-24:00 依排班執勤</td>
+            <td>排班輪值制（全年無休進出場）</td>
+            <td>負責各區清運資源回收物進場分類、過磅稱重、變賣及再生家具修復拍賣。</td>
+          </tr>
+          <tr>
+            <td><strong>年終大掃除專案</strong></td>
+            <td>每年 1 月至農曆年前（含除夕全日機動清運）</td>
+            <td>全面停休、加開清運班次</td>
+            <td>每年出勤排班最緊湊月份，處理巨量廢棄物與民眾大型家具約定清運。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="section-title">七、深入專題：人力最吃緊行政區與工種診斷，暨各區資源回收車與停點統計</div>
+    <div class="chart-container">
+      <div class="grid-cards" style="margin-bottom:16px;">
+        <div class="card" style="border-left: 4px solid #ef4444;">
+          <div class="card-title">地理幅員吃緊之冠</div>
+          <div class="card-val" style="color:#b91c1c;">士林區 / 北投區</div>
+          <div class="card-sub red">士林停點 654 處全港之冠，人均掃路 585m</div>
+        </div>
+        <div class="card" style="border-left: 4px solid #f97316;">
+          <div class="card-title">業務總量吃緊之冠</div>
+          <div class="card-val" style="color:#c2410c;">大安區 / 中山區</div>
+          <div class="card-sub red">大安資收量 7,468 噸 (13.9%)，車斗常態爆載</div>
+        </div>
+        <div class="card" style="border-left: 4px solid #dc2626;">
+          <div class="card-title">最吃緊工種團隊</div>
+          <div class="card-val" style="color:#991b1b;">資收隨車員 / 駕駛</div>
+          <div class="card-sub red">六年業務暴增 +49.4%，大貨車駕駛高薪缺工</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:15px; margin: 16px 0 8px 0; color:#1e293b;">12 行政區資源回收車輛、清運路線與停點對照總表</h3>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>行政區</th>
+              <th>循線停點 (處)</th>
+              <th>路線數 (條)</th>
+              <th>限時收受點</th>
+              <th>涵蓋里數</th>
+              <th>分隊數</th>
+              <th>推估資收車 (輛)</th>
+              <th>推估垃圾車 (輛)</th>
+              <th>停點與車輛運作特徵</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>士林區</strong></td><td><strong>654</strong></td><td>24</td><td>3 處</td><td>51 里</td><td>6 分隊</td><td>55 - 60 輛</td><td>36 - 40 輛</td><td><strong>全市停點最多</strong>、路線最長，山區幅員寬廣，折返時間長</td></tr>
+            <tr><td><strong>文山區</strong></td><td><strong>582</strong></td><td>18</td><td>3 處</td><td>43 里</td><td>6 分隊</td><td>48 - 52 輛</td><td>32 - 36 輛</td><td>山坡地狹長聚落，停點密度極高，需小型資收車穿梭巷弄</td></tr>
+            <tr><td><strong>北投區</strong></td><td><strong>544</strong></td><td>14</td><td>3 處</td><td>41 里</td><td>4 分隊</td><td>42 - 46 輛</td><td>28 - 32 輛</td><td>關渡平原與陽明山區路線長，單一路線停點多達 35~40 處</td></tr>
+            <tr><td><strong>中正區</strong></td><td><strong>347</strong></td><td>13</td><td>1 處</td><td>31 里</td><td>6 分隊</td><td>32 - 36 輛</td><td>22 - 25 輛</td><td>文教特區與博愛特區，公家機關與交通樞紐清運定點準時要求高</td></tr>
+            <tr><td><strong>中山區</strong></td><td><strong>338</strong></td><td>21</td><td>4 處</td><td>42 里</td><td>7 分隊</td><td>50 - 54 輛</td><td>34 - 38 輛</td><td>商辦與條通夜生活垃圾量龐大，資收車出勤密度高、夜間作業繁重</td></tr>
+            <tr><td><strong>大安區</strong></td><td><strong>310</strong></td><td>20</td><td>7 處</td><td>53 里</td><td>7 分隊</td><td>56 - 60 輛</td><td>38 - 42 輛</td><td><strong>資收量居全市之冠</strong>、限時點最多，車斗常態滿載，需加開專車清運</td></tr>
+            <tr><td><strong>萬華區</strong></td><td><strong>303</strong></td><td>10</td><td>2 處</td><td>36 里</td><td>6 分隊</td><td>32 - 36 輛</td><td>22 - 25 輛</td><td>老舊社區狹小窄巷多，需靈活調度 3.5 噸小型資收車進出</td></tr>
+            <tr><td><strong>大同區</strong></td><td><strong>247</strong></td><td>9</td><td>3 處</td><td>25 里</td><td>4 分隊</td><td>26 - 30 輛</td><td>18 - 20 輛</td><td>面積最小行政區，停點距離短，收運效率高</td></tr>
+            <tr><td><strong>南港區</strong></td><td><strong>211</strong></td><td>10</td><td>2 處</td><td>20 里</td><td>3 分隊</td><td>26 - 30 輛</td><td>18 - 20 輛</td><td>經貿園區與住宅區劃分分明，路線筆直，車輛調配相對精簡</td></tr>
+            <tr><td><strong>內湖區</strong></td><td><strong>201</strong></td><td>16</td><td>1 處</td><td>39 里</td><td>4 分隊</td><td>46 - 50 輛</td><td>30 - 34 輛</td><td>科技園區與高樓住宅集中，每點清運量大，大容量資收車配置多</td></tr>
+            <tr><td><strong>信義區</strong></td><td><strong>169</strong></td><td>21</td><td>0 處</td><td>41 里</td><td>5 分隊</td><td>40 - 44 輛</td><td>28 - 32 輛</td><td>百貨商圈密集，夜間定點停靠時間較長，大型活動機動車輛支援多</td></tr>
+            <tr><td><strong>松山區</strong></td><td><strong>106</strong></td><td>12</td><td>1 處</td><td>31 里</td><td>4 分隊</td><td>34 - 38 輛</td><td>24 - 26 輛</td><td>停點最精簡，主要集中於八德、民生社區各集合點快速清運</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="100%" height="420" style="background:#ffffff; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <rect width="800" height="420" fill="#ffffff" rx="8"/>
+  <text x="400" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">「業務暴增 vs 人力停滯」：人均清運與資源回收工作負荷激增趨勢</text>
+  <text x="400" y="52" text-anchor="middle" font-size="12" fill="#64748b">臺北市每位外勤人員年均負擔清運量 (公噸/人) 走勢分析 (106-114年)</text>
+
+  <!-- Legend -->
+  <g transform="translate(220, 75)">
+    <circle cx="10" cy="7" r="6" fill="#dc2626"/>
+    <text x="25" y="12" font-size="12" fill="#334155">人均廢棄物清運負擔 (公噸/人)</text>
+    <circle cx="240" cy="7" r="6" fill="#059669"/>
+    <text x="255" y="12" font-size="12" fill="#334155">人均資源回收負擔 (公噸/人)</text>
+  </g>
+
+  <!-- Axes & Grid -->
+  <line x1="80" y1="350" x2="720" y2="350" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="80" y1="110" x2="80" y2="350" stroke="#cbd5e1" stroke-width="1.5"/>
+
+  <text x="70" y="355" text-anchor="end" font-size="11" fill="#64748b">0</text>
+  <text x="70" y="290" text-anchor="end" font-size="11" fill="#64748b">50</text>
+  <line x1="80" y1="286" x2="720" y2="286" stroke="#f1f5f9" stroke-dasharray="4"/>
+  <text x="70" y="226" text-anchor="end" font-size="11" fill="#64748b">100</text>
+  <line x1="80" y1="222" x2="720" y2="222" stroke="#f1f5f9" stroke-dasharray="4"/>
+  <text x="70" y="162" text-anchor="end" font-size="11" fill="#64748b">150</text>
+  <line x1="80" y1="158" x2="720" y2="158" stroke="#f1f5f9" stroke-dasharray="4"/>
+  <text x="70" y="115" text-anchor="end" font-size="11" fill="#64748b">200</text>
+
+  <!-- Years 106 - 114 -->
+  <!-- 106: waste=127.4, recy=79.0 -->
+  <!-- 108: waste=132.8, recy=79.7 -->
+  <!-- 110: waste=124.9, recy=81.2 -->
+  <!-- 111: waste=126.0, recy=83.3 -->
+  <!-- 112: waste=162.7, recy=106.5 -->
+  <!-- 113: waste=178.3, recy=118.1 -->
+  <!-- 114: waste=172.8, recy=117.5 -->
+  <text x="110" y="370" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">106年</text>
+  <circle cx="110" cy="197" r="5" fill="#dc2626"/>
+  <text x="110" y="189" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">127.4</text>
+  <circle cx="110" cy="255" r="5" fill="#059669"/>
+  <text x="110" y="271" text-anchor="middle" font-size="10" font-weight="bold" fill="#059669">79.0</text>
+  <text x="178" y="370" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">107年</text>
+  <circle cx="178" cy="198" r="5" fill="#dc2626"/>
+  <text x="178" y="190" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">126.2</text>
+  <circle cx="178" cy="257" r="5" fill="#059669"/>
+  <text x="178" y="273" text-anchor="middle" font-size="10" font-weight="bold" fill="#059669">77.2</text>
+  <text x="246" y="370" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">108年</text>
+  <circle cx="246" cy="190" r="5" fill="#dc2626"/>
+  <text x="246" y="182" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">132.8</text>
+  <circle cx="246" cy="254" r="5" fill="#059669"/>
+  <text x="246" y="270" text-anchor="middle" font-size="10" font-weight="bold" fill="#059669">79.7</text>
+  <text x="314" y="370" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">109年</text>
+  <circle cx="314" cy="197" r="5" fill="#dc2626"/>
+  <text x="314" y="189" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">127.5</text>
+  <circle cx="314" cy="253" r="5" fill="#059669"/>
+  <text x="314" y="269" text-anchor="middle" font-size="10" font-weight="bold" fill="#059669">80.8</text>
+  <text x="382" y="370" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">110年</text>
+  <circle cx="382" cy="200" r="5" fill="#dc2626"/>
+  <text x="382" y="192" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">124.9</text>
+  <circle cx="382" cy="252" r="5" fill="#059669"/>
+  <text x="382" y="268" text-anchor="middle" font-size="10" font-weight="bold" fill="#059669">81.2</text>
+  <text x="450" y="370" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">111年</text>
+  <circle cx="450" cy="198" r="5" fill="#dc2626"/>
+  <text x="450" y="190" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">126.0</text>
+  <circle cx="450" cy="250" r="5" fill="#059669"/>
+  <text x="450" y="266" text-anchor="middle" font-size="10" font-weight="bold" fill="#059669">83.3</text>
+  <text x="518" y="370" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">112年</text>
+  <circle cx="518" cy="154" r="5" fill="#dc2626"/>
+  <text x="518" y="146" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">162.7</text>
+  <circle cx="518" cy="222" r="5" fill="#059669"/>
+  <text x="518" y="238" text-anchor="middle" font-size="10" font-weight="bold" fill="#059669">106.5</text>
+  <text x="586" y="370" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">113年</text>
+  <circle cx="586" cy="136" r="5" fill="#dc2626"/>
+  <text x="586" y="128" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">178.3</text>
+  <circle cx="586" cy="208" r="5" fill="#059669"/>
+  <text x="586" y="224" text-anchor="middle" font-size="10" font-weight="bold" fill="#059669">118.1</text>
+  <text x="654" y="370" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">114年</text>
+  <circle cx="654" cy="142" r="5" fill="#dc2626"/>
+  <text x="654" y="134" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">172.8</text>
+  <circle cx="654" cy="209" r="5" fill="#059669"/>
+  <text x="654" y="225" text-anchor="middle" font-size="10" font-weight="bold" fill="#059669">117.5</text>
+  <polyline points="110,197 178,198 246,190 314,197 382,200 450,198 518,154 586,136 654,142" fill="none" stroke="#dc2626" stroke-width="3"/>
+  <polyline points="110,255 178,257 246,254 314,253 382,252 450,250 518,222 586,208 654,209" fill="none" stroke="#059669" stroke-width="3"/>
+
+  <!-- Annotation callout -->
+  <rect x="520" y="110" width="190" height="48" fill="#fef2f2" stroke="#f87171" rx="6"/>
+  <text x="530" y="128" font-size="11" font-weight="bold" fill="#b91c1c">112-114 年人均負荷激增</text>
+  <text x="530" y="146" font-size="10" fill="#991b1b">廢棄物增 +40%、資收量增 +48%</text>
+
+  <text x="400" y="405" text-anchor="middle" font-size="11" fill="#64748b">
+    統計核心發現：外勤總人數維持在 6,000 人上下，但廢棄物與資源回收總量劇增，使隊員每人出勤清運的平均負擔達到歷史新高。
+  </text>
+</svg>

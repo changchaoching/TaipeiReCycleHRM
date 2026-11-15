@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="450" style="background:#ffffff; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <rect width="800" height="450" fill="#ffffff" rx="8"/>
+  <text x="400" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">臺北市清潔人員歷年人力結構變化趨勢 (109-113年)</text>
+  <text x="400" y="52" text-anchor="middle" font-size="12" fill="#64748b">資料來源：臺北市政府環境保護局／臺北市資料大平臺</text>
+  
+  <!-- Legend -->
+  <g transform="translate(180, 75)">
+    <rect x="0" y="0" width="14" height="14" fill="#3b82f6" rx="2"/>
+    <text x="20" y="12" font-size="12" fill="#334155">總人數</text>
+    <rect x="110" y="0" width="14" height="14" fill="#0284c7" rx="2"/>
+    <text x="130" y="12" font-size="12" fill="#334155">垃圾清運</text>
+    <rect x="230" y="0" width="14" height="14" fill="#10b981" rx="2"/>
+    <text x="250" y="12" font-size="12" fill="#334155">資源回收 (激增)</text>
+    <circle cx="370" cy="7" r="5" fill="#ec4899"/>
+    <line x1="355" y1="7" x2="385" y2="7" stroke="#ec4899" stroke-width="2"/>
+    <text x="395" y="12" font-size="12" fill="#334155">女性佔比(%)</text>
+  </g>
+
+  <!-- Axes & Grid -->
+  <line x1="80" y1="370" x2="720" y2="370" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="80" y1="110" x2="80" y2="370" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="720" y1="110" x2="720" y2="370" stroke="#cbd5e1" stroke-width="1.5"/>
+  
+  <!-- Left Y-ticks (0 - 7000) -->
+  <text x="70" y="375" text-anchor="end" font-size="11" fill="#64748b">0</text>
+  <line x1="75" y1="370" x2="80" y2="370" stroke="#94a3b8"/>
+  <text x="70" y="300" text-anchor="end" font-size="11" fill="#64748b">2,000</text>
+  <line x1="80" y1="296" x2="720" y2="296" stroke="#f1f5f9" stroke-dasharray="4"/>
+  <text x="70" y="225" text-anchor="end" font-size="11" fill="#64748b">4,000</text>
+  <line x1="80" y1="221" x2="720" y2="221" stroke="#f1f5f9" stroke-dasharray="4"/>
+  <text x="70" y="150" text-anchor="end" font-size="11" fill="#64748b">6,000</text>
+  <line x1="80" y1="147" x2="720" y2="147" stroke="#f1f5f9" stroke-dasharray="4"/>
+  <text x="70" y="115" text-anchor="end" font-size="11" fill="#64748b">7,000</text>
+  
+  <!-- Right Y-ticks (Female %: 15% - 25%) -->
+  <text x="730" y="375" text-anchor="start" font-size="11" fill="#ec4899">15%</text>
+  <text x="730" y="245" text-anchor="start" font-size="11" fill="#ec4899">20%</text>
+  <text x="730" y="115" text-anchor="start" font-size="11" fill="#ec4899">25%</text>
+
+  <!-- Data Points: 109下, 110下, 111下, 112下, 113下 -->
+  <!-- X positions: 140, 260, 380, 500, 620 -->
+  <!-- 109下: Total 6643 (y=124), Garbage 4259 (y=212), Recy 1024 (y=332), Fem 21.69% (y=201) -->
+  <!-- 110下: Total 6577 (y=126), Garbage 4184 (y=215), Recy 1059 (y=331), Fem 22.23% (y=187) -->
+  <!-- 111下: Total 6562 (y=127), Garbage 4181 (y=215), Recy 1077 (y=330), Fem 21.73% (y=200) -->
+  <!-- 112下: Total 6556 (y=127), Garbage 4116 (y=217), Recy 1110 (y=329), Fem 21.89% (y=196) -->
+  <!-- 113下: Total 6529 (y=128), Garbage 3964 (y=223), Recy 1207 (y=325), Fem 22.48% (y=180) -->
+
+  <!-- Group 1: 109年底 -->
+  <g transform="translate(140, 0)">
+    <rect x="-35" y="124" width="22" height="246" fill="#3b82f6" rx="2"/>
+    <rect x="-10" y="212" width="22" height="158" fill="#0284c7" rx="2"/>
+    <rect x="15" y="332" width="22" height="38" fill="#10b981" rx="2"/>
+    <text x="0" y="390" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">109年底</text>
+    <text x="-24" y="116" text-anchor="middle" font-size="10" fill="#3b82f6">6,643</text>
+    <text x="26" y="325" text-anchor="middle" font-size="10" fill="#10b981">1,024</text>
+  </g>
+
+  <!-- Group 2: 110年底 -->
+  <g transform="translate(260, 0)">
+    <rect x="-35" y="126" width="22" height="244" fill="#3b82f6" rx="2"/>
+    <rect x="-10" y="215" width="22" height="155" fill="#0284c7" rx="2"/>
+    <rect x="15" y="331" width="22" height="39" fill="#10b981" rx="2"/>
+    <text x="0" y="390" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">110年底</text>
+    <text x="-24" y="118" text-anchor="middle" font-size="10" fill="#3b82f6">6,577</text>
+    <text x="26" y="324" text-anchor="middle" font-size="10" fill="#10b981">1,059</text>
+  </g>
+
+  <!-- Group 3: 111年底 -->
+  <g transform="translate(380, 0)">
+    <rect x="-35" y="127" width="22" height="243" fill="#3b82f6" rx="2"/>
+    <rect x="-10" y="215" width="22" height="155" fill="#0284c7" rx="2"/>
+    <rect x="15" y="330" width="22" height="40" fill="#10b981" rx="2"/>
+    <text x="0" y="390" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">111年底</text>
+    <text x="-24" y="119" text-anchor="middle" font-size="10" fill="#3b82f6">6,562</text>
+    <text x="26" y="323" text-anchor="middle" font-size="10" fill="#10b981">1,077</text>
+  </g>
+
+  <!-- Group 4: 112年底 -->
+  <g transform="translate(500, 0)">
+    <rect x="-35" y="127" width="22" height="243" fill="#3b82f6" rx="2"/>
+    <rect x="-10" y="217" width="22" height="153" fill="#0284c7" rx="2"/>
+    <rect x="15" y="329" width="22" height="41" fill="#10b981" rx="2"/>
+    <text x="0" y="390" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">112年底</text>
+    <text x="-24" y="119" text-anchor="middle" font-size="10" fill="#3b82f6">6,556</text>
+    <text x="26" y="322" text-anchor="middle" font-size="10" fill="#10b981">1,110</text>
+  </g>
+
+  <!-- Group 5: 113年底 -->
+  <g transform="translate(620, 0)">
+    <rect x="-35" y="128" width="22" height="242" fill="#3b82f6" rx="2"/>
+    <rect x="-10" y="223" width="22" height="147" fill="#0284c7" rx="2"/>
+    <rect x="15" y="325" width="22" height="45" fill="#10b981" rx="2"/>
+    <text x="0" y="390" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">113年底</text>
+    <text x="-24" y="120" text-anchor="middle" font-size="10" fill="#3b82f6">6,529</text>
+    <text x="26" y="318" text-anchor="middle" font-size="10" fill="#10b981" font-weight="bold">1,207 (+18%)</text>
+  </g>
+
+  <!-- Line for Female % -->
+  <polyline points="140,201 260,187 380,200 500,196 620,180" fill="none" stroke="#ec4899" stroke-width="3" stroke-dasharray="2"/>
+  <circle cx="140" cy="201" r="5" fill="#ec4899"/>
+  <circle cx="260" cy="187" r="5" fill="#ec4899"/>
+  <circle cx="380" cy="200" r="5" fill="#ec4899"/>
+  <circle cx="500" cy="196" r="5" fill="#ec4899"/>
+  <circle cx="620" cy="180" r="5" fill="#ec4899"/>
+  <text x="620" y="168" text-anchor="middle" font-size="11" font-weight="bold" fill="#ec4899">22.5%</text>
+
+  <!-- Note Footer -->
+  <text x="400" y="428" text-anchor="middle" font-size="11" fill="#64748b">
+    關鍵洞察：總編制人數微幅減少 (-1.7%)，但資源回收人力由 1,024 人大幅增加至 1,207 人 (+17.9%)，女性佔比持續攀升。
+  </text>
+</svg>
